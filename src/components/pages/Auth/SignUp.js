@@ -1,4 +1,5 @@
 import "./Auth.css";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   return (
@@ -33,6 +34,9 @@ function SignUp() {
         <button className="btn btn-lg btn-primary btn-block" type="submit">
           Sign up
         </button>
+        <Link to="/login" className="p-3">
+          Login
+        </Link>
       </form>
     </div>
   );
