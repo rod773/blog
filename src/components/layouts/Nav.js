@@ -7,7 +7,7 @@ function Nav() {
   useEffect(() => {
     // The DOM element is accessible here.
 
-    const headerHeight = mainNav.clientHeight;
+    const headerHeight = mainNav.current.clientHeight;
     let scrollPos = 0;
 
     window.addEventListener("scroll", function () {
@@ -18,7 +18,6 @@ function Nav() {
         if (currentTop > 0 && mainNav.current.classList.contains("is-fixed")) {
           mainNav.current.classList.add("is-visible");
         } else {
-          console.log(123);
           mainNav.current.classList.remove("is-visible", "is-fixed");
         }
       } else {
@@ -33,6 +32,8 @@ function Nav() {
       }
 
       scrollPos = currentTop;
+      // console.log(headerHeight);
+      // console.log(scrollPos);
     });
   }, []);
 
